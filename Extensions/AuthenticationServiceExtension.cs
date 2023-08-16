@@ -1,17 +1,23 @@
-using Microsoft.AspNetCore.Authentication;
+using AuthenticationApi.Certificate;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace AuthenticationApi.Extensions
 {
   public static class AuthenticationServiceExtensions
   {
-    public static AuthenticationBuilder ConfigureAuthentication(this IServiceCollection services)
+    public static void ConfigureAuthentication(this IServiceCollection services)
     {
-      return services.AddAuthentication(options =>
+      services.AddAuthentication(options =>
        {
          options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
          options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
          options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+       }).AddJwtBearer(jwt =>
+       {
+         var certificate = new SigningIssuerCertificate();
+         var issuerKey = certificate.GetIssuerSigningKey();
+         jwt.SaveToken = true;
+         jwt.TokenValidationParameters = Global.TokenValidationParameters;
        });
     }
   }

@@ -1,8 +1,8 @@
-using System.Text;
 using AuthenticationApi.Data;
 using AuthenticationApi.Extensions;
+using AuthenticationApi.Repositories.IdentityUser;
+using AuthenticationApi.Service;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,26 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSwagger();
 builder.Services.ConfigureIdentity();
-builder.Services.ConfigureAuthentication()
-.AddJwtBearer(jwt =>
-{
-  var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("JwtConfig:Secret").Value!);
-  jwt.SaveToken = true;
-  jwt.TokenValidationParameters = new TokenValidationParameters()
-  {
-    ValidateIssuerSigningKey = true,
-    IssuerSigningKey = new SymmetricSecurityKey(key),
-    ValidateLifetime = true,
-    ValidateIssuer = true,
-    RequireExpirationTime = true,
-    ValidIssuer = "dev.with.ari",
-    ValidAudience = "dev.with.ari",
-    ClockSkew = TimeSpan.Zero
-  };
-});
+builder.Services.ConfigureAuthentication();
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddTransient<TokenService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
   options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));

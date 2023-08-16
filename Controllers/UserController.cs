@@ -1,5 +1,6 @@
 using AuthenticationApi.Dto;
 using AuthenticationApi.Models;
+using AuthenticationApi.Repositories.IdentityUser;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,12 +13,12 @@ namespace AuthenticationApi.Controllers
   public class UserController : ControllerBase
   {
 
-    private readonly UserManager<User> _userManager;
+    private readonly IUserRepository _userRepo;
     private readonly IMapper _mapper;
 
-    public UserController(UserManager<User> userManager, IMapper mapper)
+    public UserController(IUserRepository userRepo, IMapper mapper)
     {
-      _userManager = userManager;
+      _userRepo = userRepo;
       _mapper = mapper;
     }
 
@@ -25,14 +26,11 @@ namespace AuthenticationApi.Controllers
     [Route("register")]
     public async Task<IActionResult> Register(UserRegistrationDto dto)
     {
-      if (!ModelState.IsValid)
-      {
-        return BadRequest(ModelState);
-      }
+      if (!ModelState.IsValid) return BadRequest(ModelState);
       try
       {
         User user = _mapper.Map<User>(dto);
-        var result = await _userManager.CreateAsync(user, dto.Password);
+        var result = await _userRepo.CreateNew(user, dto.Password);
         if (!result.Succeeded)
         {
           foreach (var error in result.Errors)
@@ -41,13 +39,13 @@ namespace AuthenticationApi.Controllers
           }
           return BadRequest(ModelState);
         }
-        await _userManager.AddToRoleAsync(user, "Visitor");
+        await _userRepo.AssignRole(user, nameof(Role.Visitor));
         return Ok("new user crafted successfully");
       }
       catch (Exception e)
       {
         Console.WriteLine(e);
-        return StatusCode(500);
+        return StatusCode(500, e.Message);
       }
     }
   }

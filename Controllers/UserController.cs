@@ -31,13 +31,7 @@ namespace AuthenticationApi.Controllers
       }
       try
       {
-        User user = new()
-        {
-          Email = dto.Email,
-          FirstName = dto.FirstName,
-          UserName = dto.Email,
-          LastName = dto.LastName
-        };
+        User user = _mapper.Map<User>(dto);
         var result = await _userManager.CreateAsync(user, dto.Password);
         if (!result.Succeeded)
         {
@@ -45,9 +39,10 @@ namespace AuthenticationApi.Controllers
           {
             ModelState.TryAddModelError(error.Code, error.Description);
           }
+          return BadRequest(ModelState);
         }
-        Console.WriteLine($"user = {user}");
-        return Ok(user);
+        await _userManager.AddToRoleAsync(user, "Visitor");
+        return Ok("new user crafted successfully");
       }
       catch (Exception e)
       {

@@ -1,0 +1,21 @@
+[
+    {
+        "_id": "6ae91ca3-61b3-4131-8aee-3a7abb5fcac5",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:5287/api/Auth/login",
+        "url": "http://localhost:5287/api/Auth/login",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-08-15T20:14:30.957Z",
+        "modified": "2023-08-15T20:21:17.301Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"email\": \"joss@example.com\",\n  \"password\": \"string\"\n}",
+            "form": []
+        },
+        "tests": []
+    }
+]

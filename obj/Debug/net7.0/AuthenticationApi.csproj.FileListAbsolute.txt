@@ -75,3 +75,11 @@
 /Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/System.CodeDom.dll
 /Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/AutoMapper.dll
 /Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/thunder-tests/thunderActivity.json

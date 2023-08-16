@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace AuthenticationApi.Controllers;
 
 [ApiController]
@@ -17,6 +18,7 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
+
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()

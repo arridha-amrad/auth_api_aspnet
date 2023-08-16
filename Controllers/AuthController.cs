@@ -105,6 +105,7 @@ namespace AuthenticationApi.Controllers
     [HttpGet("me")]
     public async Task<IActionResult> Me()
     {
+      Console.WriteLine("execute");
       var email = User.Claims.First(claim => claim.Type == ClaimTypes.Email).Value;
       if (email == null) return NotFound("User not found");
       try
@@ -115,6 +116,7 @@ namespace AuthenticationApi.Controllers
       }
       catch (Exception e)
       {
+        Console.WriteLine(e);
         return StatusCode(500, e.Message);
       }
 
@@ -162,9 +164,7 @@ namespace AuthenticationApi.Controllers
     private string GenerateToken(User user, IList<string> roles, TokenType tokenType)
     {
       var jwtTokenHandler = new JwtSecurityTokenHandler();
-
       var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtConfig:Secret").Value!);
-
       List<Claim> claims = roles.Select(role => new Claim("role", role)).ToList();
 
       var subject = new ClaimsIdentity();

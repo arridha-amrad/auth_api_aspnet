@@ -27,7 +27,7 @@
         "method": "GET",
         "sortNum": 0,
         "created": "2023-08-16T10:21:20.484Z",
-        "modified": "2023-08-16T10:30:52.091Z",
+        "modified": "2023-08-16T16:04:07.488Z",
         "headers": [
             {
                 "name": "Authorization",
@@ -38,7 +38,7 @@
         "params": [],
         "auth": {
             "type": "bearer",
-            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVmlzaXRvciIsInR5cGUiOiJBY2Nlc3MiLCJzdWIiOiJjN2QyZTEyYy0wMWMwLTRhNDctYjU0MC0wOTVjZTgxN2ExMGMiLCJlbWFpbCI6Impvc3NAZXhhbXBsZS5jb20iLCJqdGkiOiIyZGU4OTRhNC1jZDZkLTRhNzItOTU1NC00MTZkMTBmMDVhYWUiLCJpYXQiOjE2OTIxODE4NDEsIm5iZiI6MTY5MjE4MTg0MSwiZXhwIjoxNjkyMTg1NDQxLCJpc3MiOiJkZXYud2l0aC5hcmkiLCJhdWQiOiJkZXYud2l0aC5hcmkifQ.8rcK7vUydbGqz0n3-4j8v0FfLL_5aXEN8JDIRYGjbrE"
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVmlzaXRvciIsInR5cGUiOiJBY2Nlc3MiLCJ1bmlxdWVfbmFtZSI6ImM3ZDJlMTJjLTAxYzAtNGE0Ny1iNTQwLTA5NWNlODE3YTEwYyIsImVtYWlsIjoiam9zc0BleGFtcGxlLmNvbSIsImp0aSI6ImE5ODMzYmUwLTA5NjAtNDc3Ny05ODhhLTAxNzk2YjJhNjNiYiIsImlhdCI6MTY5MjIwMTgzNiwibmJmIjoxNjkyMjAxODM2LCJleHAiOjE2OTIyMDU0MzYsImlzcyI6ImRldi53aXRoLmFyaSIsImF1ZCI6ImRldi53aXRoLmFyaSJ9.4dlwQBuPNDZJImfoHIOb2Fv7_n2qVQWXQyihiCyX8IM"
         },
         "tests": []
     },

@@ -4,6 +4,7 @@ namespace AuthenticationApi.Dto
 {
   public class LoginDto
   {
+    [EmailAddress]
     [Required]
     public required string Email { get; set; }
 

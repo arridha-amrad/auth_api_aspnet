@@ -1,0 +1,77 @@
+{
+    "_id": "3b204a54-2ec9-4931-aad5-37a411fbd3b3",
+    "colName": "auth_api",
+    "created": "2023-08-16T10:49:21.344Z",
+    "sortNum": 10000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "060faecd-9650-4530-9f27-c498b2bd03a2",
+            "colId": "3b204a54-2ec9-4931-aad5-37a411fbd3b3",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:5287/api/Auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-16T10:49:29.404Z",
+            "modified": "2023-08-16T10:49:59.930Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"joss@example.com\",\n  \"password\": \"string\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "26c49225-6313-41d5-93ff-d29148dd13a8",
+            "colId": "3b204a54-2ec9-4931-aad5-37a411fbd3b3",
+            "containerId": "",
+            "name": "me",
+            "url": "http://localhost:5287/api/Auth/me",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-08-16T10:50:04.816Z",
+            "modified": "2023-08-16T10:51:51.916Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVmlzaXRvciIsInR5cGUiOiJBY2Nlc3MiLCJzdWIiOiJjN2QyZTEyYy0wMWMwLTRhNDctYjU0MC0wOTVjZTgxN2ExMGMiLCJlbWFpbCI6Impvc3NAZXhhbXBsZS5jb20iLCJqdGkiOiJhZWUwOTA4YS0wMjE0LTQ5MzktYTNhOC1kMGQ3MjVhY2Y4ZTUiLCJpYXQiOjE2OTIxODMwOTIsIm5iZiI6MTY5MjE4MzA5MiwiZXhwIjoxNjkyMTg2NjkyLCJpc3MiOiJkZXYud2l0aC5hcmkiLCJhdWQiOiJkZXYud2l0aC5hcmkifQ.s_WqwoC5swUv8rVOv3FFQQsMyZOeGQJMMDNo7xecwcE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "00a91b33-4a95-47f5-b668-858103b9e85d",
+            "colId": "3b204a54-2ec9-4931-aad5-37a411fbd3b3",
+            "containerId": "",
+            "name": "refresh-token",
+            "url": "",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-08-16T10:51:01.811Z",
+            "modified": "2023-08-16T10:51:01.811Z",
+            "headers": []
+        },
+        {
+            "_id": "61bdaf14-6889-44fa-ab62-7ad065f79462",
+            "colId": "3b204a54-2ec9-4931-aad5-37a411fbd3b3",
+            "containerId": "",
+            "name": "login Copy",
+            "url": "http://localhost:5287/api/Auth/login",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-08-16T10:52:21.938Z",
+            "modified": "2023-08-16T10:52:21.938Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"joss@example.com\",\n  \"password\": \"string\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

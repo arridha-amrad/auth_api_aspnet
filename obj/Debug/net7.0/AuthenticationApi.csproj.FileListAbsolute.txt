@@ -83,3 +83,4 @@
 /Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/thunder-tests/thunderActivity.json
+/Users/ari/Desktop/asp.net/AuthenticationApi/bin/Debug/net7.0/thunder-tests/collections/tc_col_authapi.json

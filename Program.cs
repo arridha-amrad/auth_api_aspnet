@@ -82,7 +82,8 @@ builder.Services.AddAuthentication(options =>
     ValidAudience = "dev.with.ari",
     ClockSkew = TimeSpan.Zero
   };
-});
+})
+;
 
 
 var app = builder.Build();
@@ -96,6 +97,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
